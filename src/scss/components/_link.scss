@@ -1,0 +1,11 @@
+.link {
+  display: inline-block;
+  color: inherit;
+  transition: color .3s;
+
+  @media (any-hover: hover) {
+    &:hover {
+      color:var(--add-color);
+    }
+  }
+}

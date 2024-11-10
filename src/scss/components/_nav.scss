@@ -1,0 +1,59 @@
+.nav {
+  @include flex-v-center;
+
+  gap: 50px;
+
+  &__link {
+    @include flex-v-center;
+
+    position: relative;
+    height: 85px;
+    font-family: var(--font-family-secondary);
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(var(--black-color-rgb), .7);
+    transition: color .3s;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 0;
+      height: 1.5px;
+      background-color: var(--black-color);
+      transition: width .3s;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color:var(--black-color);
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+
+    &--active {
+      color:var(--black-color);
+
+      &::after {
+        width: 100%;
+      }
+    }
+
+    @media (width <= 1024px) {
+      padding-bottom: 2px;
+      height: auto;
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+
+  @media (width <= 1024px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}

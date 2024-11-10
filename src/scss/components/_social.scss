@@ -1,0 +1,13 @@
+.social {
+  @include flex;
+
+  flex-wrap: wrap;
+  gap: 10px;
+
+  &__link {
+    border-radius: 2px;
+    width: 30px;
+    height: 30px;
+    background-color: var(--black-color);
+  }
+}

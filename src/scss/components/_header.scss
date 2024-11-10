@@ -1,0 +1,141 @@
+.header {
+  @include flex;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--grey-color);
+  width: 100%;
+  gap: 25px;
+
+  &__item {
+    @include flex-all-center;
+
+    flex-shrink: 0;
+    width: 86px;
+    height: auto;
+    color: inherit;
+    transition: color .3s;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    &--map {
+      border-right: 1px solid var(--grey-color);
+    }
+
+    &--phone {
+      border-left: 1px solid var(--grey-color);
+    }
+
+    &--burger {
+      position: relative;
+      z-index: 100;
+      border-left: 1px solid var(--grey-color);
+      background-color: var(--white-color);
+
+      @media (width >= 1025px) {
+        display: none;
+      }
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color:var(--add-color);
+      }
+    }
+
+    @media (width <= 1024px) {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  &__logo {
+    display: block;
+    flex-shrink: 0;
+    margin-right: auto;
+    margin-left: auto;
+    width: 30px;
+    height: 30px;
+    color: var(--black-color);
+    transition: color .3s;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color:var(--add-color);
+      }
+    }
+  }
+
+  &__container {
+    @include flex-all-sb;
+
+    flex-grow: 1;
+    max-width: 1004px;
+    gap: 50px;
+  }
+
+  &__nav {
+    width: calc(50% - 130px);
+
+    &--right {
+      justify-content: flex-end;
+    }
+
+    @media (width <= 1024px) {
+      display: none;
+    }
+  }
+
+  &__mobile {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    display: none;
+    overflow-y: auto;
+    padding: 25px 15px;
+    width: 70%;
+    height: 100vh;
+    background-color: var(--white-color);
+    transform: translateX(-150%);
+    transition: transform 0.3s ease-in-out;
+
+    &--active {
+      transform: none;
+    }
+
+    @media (width <= 1024px) {
+      display: block;
+    }
+  }
+
+  &__overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 95;
+    background-color: rgba(var(--black-color-rgb), .7);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s, visibility .3s;
+
+    &--visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  @media (width <= 1024px) {
+    gap: 0;
+  }
+}

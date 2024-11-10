@@ -1,0 +1,11 @@
+.title {
+  margin: 0;
+  font-family: var(--font-family-secondary);
+
+  span {
+    -webkit-text-stroke: 1px var(--black-color);
+    /* stylelint-disable */
+    text-stroke: 1px var(--black-color);
+    color: transparent;
+  }
+}

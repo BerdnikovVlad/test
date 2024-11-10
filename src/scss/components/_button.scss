@@ -1,0 +1,34 @@
+.button {
+  position: relative;
+  border: 1px solid rgba(var(--black-color-rgb), .3);
+  padding: 9px 47px;
+  font-family: var(--font-family-secondary);
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: inherit;
+  background-color: transparent;
+  transition: border-color .3s;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 20px;
+    height: 1px;
+    background-color: currentcolor;
+    transform: translate(-50%,-50%);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      border-color: var(--black-color);
+    }
+  }
+}

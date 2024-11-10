@@ -1,0 +1,25 @@
+:root {
+  // base
+  --font-family-main: "Montserrat", sans-serif;
+  --font-family-secondary: "Gilroy", sans-serif;
+  --content-width: 100%;
+  --container-offset: 170px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  // colors
+  --white-color: #FFF;
+  --white-color-rgb: 255, 255, 255;
+  --black-color: #222;
+  --black-color-rgb: 34, 34, 34;
+  --black-2-color: #000;
+  --black-2-color-rgb: 0, 0, 0;
+  --grey-color: #EBEBEB;
+  --grey-2-color: #909090;
+  --add-color: #C6876D;
+}
+
+@media (width <= 1365px) {
+  :root {
+    --container-offset: 15px;
+  }
+}
